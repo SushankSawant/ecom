@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #f5f5f7;
+  background-color: #705c53;
 }
 
 nav {
@@ -41,6 +41,7 @@ main {
     font-size: 40px;
     margin-bottom: 10px;
     margin-top: 10px;
+    color: #eddfe0;
   }
   /* background-color: bisque; */
   .img {
@@ -54,7 +55,7 @@ main {
   }
 
   hr {
-    margin-top: 20px;
+    margin-top: 30px;
     width: 30%;
     align-items: center;
     transform: translate(-50%, -50%);
@@ -72,22 +73,31 @@ main {
   width: 100%;
   margin-bottom: 20px;
   .prod {
-    padding: 10px;
+    /* padding: 10px; */
     border-radius: 20px;
     position: relative;
     list-style: none;
     width: 350px;
     margin-bottom: 15px;
     /* width: 60px; */
-    background-color: #b7b7b7;
+    background-color: #312019;
     /* height: 400px; */
+    transition: 0.5s all ease;
+    cursor: pointer;
+    &:hover {
+      box-shadow: 0px 0px 20px #eddfe0b2;
+    }
 
     .prod-det {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-evenly;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 18px;
+      gap: 75px;
+      margin-bottom: 8px;
+      margin-top: 8px;
       align-items: center;
+      color: white;
     }
 
     .rating {
@@ -109,7 +119,7 @@ main {
       cursor: pointer;
       border-radius: 10px;
 
-      margin-bottom: 10px;
+      margin-bottom: 18px;
       width: 300px;
       border: none;
       transition: 0.5s all ease;
@@ -121,8 +131,9 @@ main {
     }
     img {
       height: 280px;
-      width: 300px;
-      margin-top: 5px;
+      width: 350px;
+
+      /* margin-top: 5px; */
       border-radius: 10px;
     }
   }
@@ -146,7 +157,7 @@ main {
   cursor: pointer;
   transition: 0.5s all ease;
   &&:hover {
-    transform: scale(0.9) rotate(360deg);
+    transform: scale(0.9) rotate(180deg);
   }
 }
 
@@ -256,6 +267,41 @@ main {
   border-radius: 050%;
 }
 
+.removeCItem {
+  color: red;
+  font-size: 15px;
+  background: white;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.5s all ease;
+  &&:hover {
+    transform: scale(0.95);
+  }
+}
+
+.info {
+  background-color: #312019;
+  h1 {
+    color: white;
+  }
+  select {
+    font-size: 28px;
+    margin-right: 5px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 20px;
+    background-color: #ed8e95;
+    padding: 10px;
+    width: 200px;
+    option {
+      /* border-radius: 20px; */
+      background-color: #b7b7b7;
+    }
+  }
+  padding: 20px;
+}
+
 @media (max-width: 730px) {
   nav {
     flex-direction: column;
@@ -283,7 +329,7 @@ main {
     top: 60px;
   }
 
-  .prodList{
+  .prodList {
     margin-bottom: 70px;
   }
 
@@ -297,7 +343,7 @@ main {
   .cart {
     width: 100%;
     z-index: 51;
-
+    padding-bottom: 120px;
     h1 {
       font-size: 24px;
     }
@@ -324,7 +370,6 @@ main {
 
   .prodList {
     & .prod {
-
       width: 250px;
       button {
         font-size: 20px;
@@ -344,5 +389,9 @@ main {
         border-radius: 10px;
       }
     }
+  }
+
+  .info {
+    margin-bottom: 80px;
   }
 }

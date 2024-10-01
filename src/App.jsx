@@ -4,10 +4,19 @@ import React, { useEffect, useState } from "react";
 import prodList from "./prodList";
 
 function App() {
+  const dataC = [
+    { country: "COUNTRY", cities: ["CITY"] },
+    { country: "UK", cities: ["PARIS", "NORWICH", "LONDON"] },
+    { country: "INDIA", cities: ["PUNE", "MUMBAI", "DELHI"] },
+    { country: "PAKISTAN", cities: ["LAHORE", "KARACHI", "TADUMMM.."] },
+    { country: "CHINA", cities: ["SHIsak", "ITsm", "SHANKsu"] },
+  ];
+  const [imgCount, setImgCount] = useState(0);
   const [cart, setCart] = useState([]);
   const [total, setTotal] = useState(0);
   const [activeC, setActiveC] = useState(false);
-  const [imgCount, setImgCount] = useState(0);
+
+  const [index, setIndex] = useState(0);
   function addItem(item) {
     setCart([...cart, item]);
   }
@@ -88,7 +97,9 @@ function App() {
                 <img src={e.img} alt="" />
                 <p>{e.name}</p>
                 <p>₹ {e.price}</p>
-                <p style={{color:"red", fontSize:"15px", background:"white", padding:"5px", borderRadius:"5px"}} onClick={() => clearCart(i)}>Remove</p>
+                <p className="removeCItem" onClick={() => clearCart(i)}>
+                  Remove
+                </p>
               </li>
             );
           })}
@@ -117,21 +128,53 @@ function App() {
           </div>
           <hr />
         </div>
-        <h1 style={{ marginTop: "40px" }}>Product List</h1>
+        <h1 style={{ marginTop: "40px" }}>DESTINATION LIST</h1>
         <div className="prodList">
           {prodList.map((e, i) => {
             return (
               <li className="prod">
                 <img src={e.img} alt="" />
                 <div className="prod-det">
-                  <p>{e.name}</p>
-                  <p>₹ {e.price}</p>
+                  <div className="napr" style={{textAlign:"left"}}>
+                    <p
+                      style={{
+                        color: "white",
+                        fontSize:"18px",
+                        fontWeight: "bold",
+                        textShadow: "-2px 2px 10px white",
+                      }}
+                    >
+                      {e.name}
+                    </p>
+                    <p>₹ {e.price}K</p>
+                  </div>
                   <p className="rating">⭐ {e.rating} </p>
                 </div>
-                <button onClick={() => addItem(e)}>Add To Cart</button>
+                <button onClick={() => addItem(e)}>BOOK NOW</button>
               </li>
             );
           })}
+        </div>
+        <div className="info">
+          <h1>Where are you from ?</h1>
+          <select
+            id="country"
+            value={index}
+            onChange={(e) => setIndex(e.target.value)}
+          >
+            {/* <option >Country</option> */}
+            {dataC.map((e, i) => {
+              return <option value={i}>{e.country}</option>;
+            })}
+          </select>
+          {index > 0 && (
+            <select name="" id="">
+              {/* <option >Cities</option> */}
+              {dataC[index].cities.map((e, i) => {
+                return <option>{e}</option>;
+              })}
+            </select>
+          )}
         </div>
       </main>
     </div>
