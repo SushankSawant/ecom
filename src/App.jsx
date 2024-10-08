@@ -71,6 +71,7 @@ function App() {
 
   return (
     <div className="parent">
+      <h1>ECOMMERCE</h1>
       <div
         className="cartBtn"
         onClick={() => {
@@ -135,11 +136,11 @@ function App() {
               <li className="prod">
                 <img src={e.img} alt="" />
                 <div className="prod-det">
-                  <div className="napr" style={{textAlign:"left"}}>
+                  <div className="napr" style={{ textAlign: "left" }}>
                     <p
                       style={{
                         color: "white",
-                        fontSize:"18px",
+                        fontSize: "18px",
                         fontWeight: "bold",
                         textShadow: "-2px 2px 10px white",
                       }}
