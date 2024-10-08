@@ -113,6 +113,8 @@ function App() {
           <li>Home</li>
           <li>About</li>
           <li>Contact</li>
+          <li>Contact</li>
+          <li>Contact</li>
         </ul>
       </nav>
       <main>
